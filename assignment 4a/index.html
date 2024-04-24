@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Company Information</h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Company</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Domain</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lorem Ipsum Inc.</td>
+                            <td>IT</td>
+                            <td><a href="https://www.example.com" target="_blank">www.example.com</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dummy Corp.</td>
+                            <td>Finance</td>
+                            <td><a href="https://www.dummycorp.com" target="_blank">www.dummycorp.com</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <button id="getClassesButton" class="btn btn-primary">Get Classes Option</button>
+                <div id="classesOption"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Function to get and display the value of classes option
+            $("#getClassesButton").on('click', function () {
+                var classesOption = $(".table").data("bs.table")._config.classes;
+                $("#classesOption").text("Value of the classes option: " + JSON.stringify(classesOption));
+            });
+        });
+    </script>
+</body>
+</html>
